@@ -13,7 +13,6 @@ body
 {
     margin: 0px;
     padding: 0px;
-    background: #1B1B1B url(images/overlay.png) repeat;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 11pt;
     font-weight: 600;
@@ -179,16 +178,20 @@ p
     display: flex;
     margin-bottom: 50px;
     padding-bottom: 5em;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
     flex-wrap: wrap;
-    margin: 0 -50px;
 }
 
 .block
 {
     display:inline-block;
     vertical-align: top;
-    margin: 0 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex: 1 0 40%;
 }
 .block h2
 {
@@ -228,17 +231,9 @@ p
     padding: 0;
 }
 
-#about
-{
-    height: 30em;
-    width: 35em;
-}
-
 #roles
 {
     flex-direction: column;
-    height: 30em;
-    width: 30em;
 }
 
 #roles a

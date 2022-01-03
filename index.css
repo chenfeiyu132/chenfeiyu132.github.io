@@ -6,6 +6,7 @@
     --span-color-empower-hightlight: rgb(202, 0, 0);
     --intro-text: #8d8d8d;
     --intro-name: rgb(99, 98, 98);
+    --about-text: #707070;
 }
 
 body
@@ -13,9 +14,9 @@ body
     margin: 0px;
     padding: 0px;
     background: #1B1B1B url(images/overlay.png) repeat;
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 11pt;
-    font-weight: 400;
+    font-weight: 600;
     color: #000000;
 }
 
@@ -45,7 +46,6 @@ p
 {
     overflow: hidden;
     margin-bottom: 42px;
-    padding-bottom: 20em;
     text-align: center;
 }
 
@@ -174,17 +174,95 @@ p
     opacity: 0.8;
 }
 
+#block-wrapper
+{
+    display: flex;
+    margin-bottom: 50px;
+    padding-bottom: 5em;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -50px;
+}
+
 .block
 {
-    display:block;
-    margin: 10px;
-    height: 100px;
-    width: 100px;
+    display:inline-block;
+    vertical-align: top;
+    margin: 0 50px;
 }
 .block h2
 {
     text-align: center;
     font-size: 2em;
-    margin: 2px;
+    color: var(--intro-name);
     font-weight: bold;
+}
+
+.block h3
+{
+    color: var(--about-text);
+    font-weight: bold;
+}
+
+.block h4
+{
+    font-size: 20px;
+    color: #424242;
+    font-weight: bold;
+}
+
+.block p
+{
+    text-align: left;
+    color: var(--intro-name);
+    line-height: 1.6;
+}
+
+.block hr
+{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid var(--intro-text);
+    margin: 1em 0;
+    padding: 0;
+}
+
+#about
+{
+    height: 30em;
+    width: 35em;
+}
+
+#roles
+{
+    flex-direction: column;
+    height: 30em;
+    width: 30em;
+}
+
+#roles a
+{
+    position: relative;
+    overflow: hidden;
+    font-weight: bolder;
+    color: var(--span-color-impact);
+    text-decoration: underline;
+}
+
+#roles a::before {
+    position: absolute;
+    content: attr(data-content); /* Prints the value of the attribute */
+    top: 0;
+    left: 0;
+    color: var(--span-color-impact-highlight);
+    overflow: hidden;
+    transition: width 275ms ease;
+    width: 0;
+    white-space: nowrap;
+}
+
+#roles a:hover::before
+{
+    width: 100%;
 }

@@ -13,7 +13,7 @@ body
 {
     margin: 0px;
     padding: 0px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
     font-weight: 600;
     color: #000000;
@@ -46,6 +46,12 @@ p
     overflow: hidden;
     margin-bottom: 42px;
     text-align: center;
+    margin: 0 auto;
+    width: 700px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .div
@@ -61,8 +67,8 @@ p
 
 #headshot
 {
-    width: 130px;
-    height: 130px;
+    width: 250px;
+    height: 250px;
     display: inline-block;
     margin-bottom: 1em;
     border-radius: 50%;
@@ -112,30 +118,6 @@ p
     color: var(--span-color-empower);
 }
 
-#intro h2 span::before {
-    position: absolute;
-    content: attr(data-content); /* Prints the value of the attribute */
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    transition: width 275ms ease;
-    width: 0;
-    white-space: nowrap;
-}
-
-#impact::before {
-    color: var(--span-color-impact-highlight);
-}
-
-#empower::before {
-    color: var(--span-color-empower-hightlight);
-}
-
-#intro h2 span:hover::before
-{
-    width: 100%;
-}
-
 #intro h3
 {
     margin-bottom: 1em;
@@ -149,7 +131,7 @@ p
     margin: 10px;
 }
 
-#external-links .link
+#external-links .logo
 {
     margin: 30px;
     text-decoration: none;
@@ -159,7 +141,7 @@ p
     width: 35px;
 }
 
-#external-links .link img
+#external-links .logo img
 {
     height: 35px;
     width: auto;
@@ -168,96 +150,28 @@ p
     margin: 7px;
 }
 
-#external-links .link img:hover
+#external-links .logo img:hover
 {
     opacity: 0.8;
 }
 
-#block-wrapper
+#bios
 {
-    display: flex;
-    margin-bottom: 50px;
-    padding-bottom: 5em;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-left: 5%;
-    margin-right: 5%;
-    flex-wrap: wrap;
+    margin-top: 3em;
+    line-height: 2.5em;
 }
 
-.block
-{
-    display:inline-block;
-    vertical-align: top;
-    margin-left: 50px;
-    margin-right: 50px;
-    flex: 1 0 40%;
-}
-.block h2
-{
-    text-align: center;
-    font-size: 2em;
-    color: var(--intro-name);
-    font-weight: bold;
-}
-
-.block h3
-{
-    color: var(--about-text);
-    font-weight: bold;
-}
-
-.block h4
-{
-    font-size: 20px;
-    color: #424242;
-    font-weight: bold;
-}
-
-.block p
-{
-    text-align: left;
-    color: var(--intro-name);
-    line-height: 1.6;
-}
-
-.block hr
-{
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 3px solid var(--intro-text);
-    margin: 1em 0;
-    padding: 0;
-}
-
-#roles
-{
-    flex-direction: column;
-}
-
-#roles a
+.link
 {
     position: relative;
     overflow: hidden;
     font-weight: bolder;
     color: var(--span-color-impact);
     text-decoration: underline;
+    transition: all 350ms ease;
 }
 
-#roles a::before {
-    position: absolute;
-    content: attr(data-content); /* Prints the value of the attribute */
-    top: 0;
-    left: 0;
-    color: var(--span-color-impact-highlight);
-    overflow: hidden;
-    transition: width 275ms ease;
-    width: 0;
-    white-space: nowrap;
-}
-
-#roles a:hover::before
+#bios a:hover
 {
-    width: 100%;
+    color: var(--span-color-impact-highlight);
 }
